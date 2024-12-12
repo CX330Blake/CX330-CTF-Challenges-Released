@@ -1,0 +1,7 @@
+version: "3"
+services:
+    challenge:
+        build:
+            context: .
+        ports:
+            - "<host port>:<docker port>"
