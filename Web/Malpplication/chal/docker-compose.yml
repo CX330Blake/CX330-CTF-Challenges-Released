@@ -1,0 +1,18 @@
+services:
+    backend:
+        build:
+            context: .
+            dockerfile: Backend.Dockerfile
+        ports:
+            - "1337:1337"
+        restart: unless-stopped
+
+    frontend:
+        build:
+            context: .
+            dockerfile: Frontend.Dockerfile
+        ports:
+            - "3000:3000"
+        depends_on:
+            - backend
+        restart: unless-stopped
