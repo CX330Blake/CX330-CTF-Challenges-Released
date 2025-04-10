@@ -5,7 +5,7 @@ if (!isset($_COOKIE['user_hash'])) {
 }
 $user_hash = $_COOKIE['user_hash'];
 $basedir = "/var/www/html/log/" . $user_hash;
-$logfile = $basedir . "/access.log";
+$logfile = "log/" . $user_hash . "/access.log";
 
 if (!preg_match('/^[a-f0-9]{32}$/', $user_hash)) {
     header("Location: index.php");
@@ -54,7 +54,13 @@ file_put_contents($logfile, $entry, FILE_APPEND);
 
 
     <?php
-    include($_GET['page'] ?? 'roses.php');
+    $page = $_GET['page'] ?? 'roses.php';
+    $allowed_pages = ['roses.php', 'violets.php', $logfile];
+    if (!in_array($page, $allowed_pages, true)) {
+        die("Bad Hacker...");
+    }
+
+    include($page);
     ?>
 
     <hr />
