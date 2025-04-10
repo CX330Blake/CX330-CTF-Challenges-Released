@@ -2,6 +2,11 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username']);
     $user_hash = md5($username);
+
+    if (!is_dir('/var/www/html/log/')) {
+        mkdir('/var/www/html/log/', 0777, true);
+    }
+
     $basedir = "/var/www/html/log/" . $user_hash;
 
     if (preg_match('/[^a-zA-Z0-9_-]/', $username)) {
