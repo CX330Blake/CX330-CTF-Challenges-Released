@@ -1,0 +1,7 @@
+--target=x86_64-w64-mingw32
+-I/usr/x86_64-w64-mingw32/sys-root/mingw/include
+-I/usr/lib/gcc/x86_64-w64-mingw32/10/include
+--driver-mode=gcc
+-D_WIN32
+-DWINVER=0x0601
+

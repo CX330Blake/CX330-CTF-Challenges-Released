@@ -1,0 +1,19 @@
+BasedOnStyle: LLVM # 基於 LLVM 標準風格（可改成 Google, Mozilla, WebKit 等）
+IndentWidth: 4 # 4 空格縮排
+TabWidth: 4 # Tab 等於 4 個空格
+UseTab: Never # 永遠使用空格，不使用 Tab
+ColumnLimit: 100 # 每行最多 100 個字元
+BreakBeforeBraces: Attach # `{` 與函式或 if/while 同行
+AlwaysBreakAfterReturnType: None # 不強制讓 return type 換行
+AlignConsecutiveAssignments: true # 讓 `=` 左右對齊
+AlignConsecutiveDeclarations: true # 讓變數宣告對齊
+AlignTrailingComments: true # 讓行尾註解對齊
+AllowShortFunctionsOnASingleLine: None # 短函式不要寫成一行
+PointerAlignment: Left # `int* ptr`（* 靠左），不使用 `int *ptr`
+SpaceBeforeParens: ControlStatements # if/while 等控制語句的括號前有空格
+BinPackArguments: false # 每個函式參數獨立換行
+BinPackParameters: false # 每個函式參數獨立換行
+ReflowComments: true # 自動整理長行註解
+SortIncludes: false # 不自動重新排序 `#include`
+IndentCaseLabels: true # switch-case 內部標籤縮排
+
