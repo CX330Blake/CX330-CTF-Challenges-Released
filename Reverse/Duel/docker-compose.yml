@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+    chal:
+        build: .
+        ports:
+            - "31605:31605"
+        restart: unless-stopped
+        read_only: true
+        cap_drop:
+            - ALL
+        security_opt:
+            - no-new-privileges:true
+        pids_limit: 128
