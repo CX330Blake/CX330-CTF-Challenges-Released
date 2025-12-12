@@ -1,7 +1,0 @@
-services:
-    chal-service:
-        build: .
-        container_name: chal
-        ports:
-            - "10001:10001"
-        restart: unless-stopped
