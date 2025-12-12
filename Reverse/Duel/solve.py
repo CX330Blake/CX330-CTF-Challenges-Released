@@ -1,18 +1,11 @@
 from pwn import *
 
-p = process("./chal")
+# p = process("./chal")
+p = remote("chall.nckuctf.org", 28147)
 
 p.sendline(b"7")
 
 p.recvuntil(b"Start!\n")
-
-# start_time = time.time()
-#
-# target_delay = 10.0
-# while True:
-#     now = time.time()
-#     if now - start_time >= target_delay:
-#         break
 
 p.sendline(b' ')
 
